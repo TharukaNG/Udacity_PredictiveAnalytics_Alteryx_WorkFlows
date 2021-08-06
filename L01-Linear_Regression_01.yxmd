@@ -1,0 +1,161 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2021.2">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="138" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="25">D:\02 Udacity - DA Nano Degree\Nano Degree\Lesson 01\linear-example-data-6.xlsx|||`Data$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>linear-example-data-6.xlsx
+Query=`Data$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Average Number of Tickets" source="File: D:\02 Udacity - DA Nano Degree\Nano Degree\Lesson 01\linear-example-data-6.xlsx|||`Data$`" type="Double" />
+            <Field name="Number of Employees" source="File: D:\02 Udacity - DA Nano Degree\Nano Degree\Lesson 01\linear-example-data-6.xlsx|||`Data$`" type="Double" />
+            <Field name="Value of Contract" source="File: D:\02 Udacity - DA Nano Degree\Nano Degree\Lesson 01\linear-example-data-6.xlsx|||`Data$`" type="Double" />
+            <Field name="Industry" size="255" source="File: D:\02 Udacity - DA Nano Degree\Nano Degree\Lesson 01\linear-example-data-6.xlsx|||`Data$`" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="Linear_Regression">
+        <Position x="246" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="curPage">Home</Value>
+          <Value name="curTab">advanced</Value>
+          <Value name="standardize_pred">True</Value>
+          <Value name="internal_cv">True</Value>
+          <Value name="display_graphs">True</Value>
+          <Value name="set_seed_internal_cv">True</Value>
+          <Value name="set_seed_external_cv">True</Value>
+          <Value name="lambda_1se">True</Value>
+          <Value name="lambda_min">False</Value>
+          <Value name="Model Name">ExampleReg</Value>
+          <Value name="Y Var">Average Number of Tickets</Value>
+          <Value name="X Vars">Number of Employees,Value of Contract,Industry</Value>
+          <Value name="Omit Constant">False</Value>
+          <Value name="Use Weights">False</Value>
+          <Value name="Weight Vec" />
+          <Value name="regularization">False</Value>
+          <Value name="alpha">0.5</Value>
+          <Value name="nfolds">5</Value>
+          <Value name="lambda">lambda_1se</Value>
+          <Value name="seed_internal_cv">1</Value>
+          <Value name="lambda_no_cv">0.5</Value>
+          <Value name="external_cv">False</Value>
+          <Value name="nfolds_external">5</Value>
+          <Value name="numberTrials">3</Value>
+          <Value name="external_seed_value">1</Value>
+          <Value name="graph.resolution">1x</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>ExampleReg</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings Macro="Linear_Regression/Supporting_Macros/Linear_Regression.yxmc" EngineDll="Macro" EngineDllEntryPoint="Linear_Regression/Supporting_Macros/Linear_Regression.yxmc" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="342" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\pc\AppData\Local\Temp\Engine_5548_5373dadad0124cd29ec896399fe80229_\Engine_13320_0e09120823b342fbbfdbbe311159843b_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Report</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Reports" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Ex - 01</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="58400f63-b0a2-4428-b261-c66ba0515f40" />
+      <Telemetry>
+        <PreviousWorkflowId value="b09fe717-ffb6-4c2a-b5c9-9fc1ae1b2a91" />
+        <OriginWorkflowId value="58400f63-b0a2-4428-b261-c66ba0515f40" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
