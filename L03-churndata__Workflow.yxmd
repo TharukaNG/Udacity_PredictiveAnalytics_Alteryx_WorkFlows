@@ -1,0 +1,178 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2021.2">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="222" y="30" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">D:\02 Udacity - DA Nano Degree\Nano Degree\Lesson 03\Exercises\churndata.yxdb</File>
+          <FormatSpecificOptions />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>churndata.yxdb</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="state" size="2" source="File: C:\Users\bburkholder\Documents\Internal\Udacity\ChurnData.txt" type="String" />
+            <Field name="account length" source="File: C:\Users\bburkholder\Documents\Internal\Udacity\ChurnData.txt" type="Int32" />
+            <Field name="area code" source="File: C:\Users\bburkholder\Documents\Internal\Udacity\ChurnData.txt" type="Int16" />
+            <Field name="phone number" size="8" source="File: C:\Users\bburkholder\Documents\Internal\Udacity\ChurnData.txt" type="String" />
+            <Field name="international plan" size="5" source="File: C:\Users\bburkholder\Documents\Internal\Udacity\ChurnData.txt" type="String" />
+            <Field name="voice mail plan" size="5" source="Formula: IF IsNULL([Right_voice mail plan])&#xA;THEN [voice mail plan]&#xA;ELSE [Right_voice mail plan]&#xA;ENDIF" type="String" />
+            <Field name="number vmail messages" source="Formula: IF [number vmail messages]=0&#xA;THEN null()&#xA;ELSE [number vmail messages]&#xA;ENDIF" type="Int32" />
+            <Field name="total day minutes" source="File: C:\Users\bburkholder\Documents\Internal\Udacity\ChurnData.txt" type="Double" />
+            <Field name="total day calls" source="Formula: IF [total day calls]&lt;102 &amp;&amp; [total day calls]&gt;100&#xA;THEN null()&#xA;ELSE [total day calls]&#xA;ENDIF" type="Int32" />
+            <Field name="total day charge" source="File: C:\Users\bburkholder\Documents\Internal\Udacity\ChurnData.txt" type="Double" />
+            <Field name="total eve minutes" source="File: C:\Users\bburkholder\Documents\Internal\Udacity\ChurnData.txt" type="Double" />
+            <Field name="total eve calls" source="File: C:\Users\bburkholder\Documents\Internal\Udacity\ChurnData.txt" type="Int32" />
+            <Field name="total eve charge" source="File: C:\Users\bburkholder\Documents\Internal\Udacity\ChurnData.txt" type="Double" />
+            <Field name="total night minutes" source="File: C:\Users\bburkholder\Documents\Internal\Udacity\ChurnData.txt" type="Double" />
+            <Field name="total night calls" source="Formula: IF [total day calls]&lt;102 &amp;&amp; [total day calls]&gt;100&#xA;THEN null()&#xA;ELSE [total day calls]&#xA;ENDIF" type="Int32" />
+            <Field name="total night charge" source="File: C:\Users\bburkholder\Documents\Internal\Udacity\ChurnData.txt" type="Double" />
+            <Field name="total intl minutes" source="File: C:\Users\bburkholder\Documents\Internal\Udacity\ChurnData.txt" type="Double" />
+            <Field name="total intl calls" source="File: C:\Users\bburkholder\Documents\Internal\Udacity\ChurnData.txt" type="Int32" />
+            <Field name="total intl charge" source="File: C:\Users\bburkholder\Documents\Internal\Udacity\ChurnData.txt" type="Double" />
+            <Field name="number customer service calls" source="File: C:\Users\bburkholder\Documents\Internal\Udacity\ChurnData.txt" type="Int32" />
+            <Field name="Churn" size="6" source="Formula: Replace([Churn],'.','')" type="String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings>
+        <Position x="330" y="30" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="do target">True</Value>
+          <Value name="target">Churn</Value>
+          <Value name="target level">True</Value>
+          <Value name="use fields">"account length","area code","number vmail messages","total day minutes","total day calls","total day charge","total eve minutes","total eve calls","total eve charge","total night minutes","total night calls","total night charge","total intl minutes","total intl calls","total intl charge","number customer service calls"</Value>
+          <Value name="Pearson">True</Value>
+          <Value name="Spearman">False</Value>
+          <Value name="Hoeffding">False</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+      </Properties>
+      <EngineSettings Macro="Predictive Tools\Association_Analysis.yxmc" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="426" y="6" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\pc\AppData\Local\Temp\Engine_14140_dc4d8c451f8c4e02b50ea0aec6e9a31e_\Engine_12764_bac6ab54b91d40199ecaf8b9e6546371_.yxdb</TempFile>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="426" y="66" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\pc\AppData\Local\Temp\Engine_14140_dc4d8c451f8c4e02b50ea0aec6e9a31e_\Engine_12764_35bec153326d43089d6780dcf2bad936_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Report</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="2" Connection="Data Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Correlation Matrix" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>churndata__Workflow</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="1dffc6b7-2d65-484c-803e-ea5b6e20cfd9" />
+      <Telemetry>
+        <PreviousWorkflowId value="bb4d3e05-111c-452f-9054-a4fc5ccabbc0" />
+        <OriginWorkflowId value="1dffc6b7-2d65-484c-803e-ea5b6e20cfd9" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
